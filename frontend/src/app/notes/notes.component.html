@@ -1,0 +1,26 @@
+<br><br>
+
+<div>
+  <label>Inhoud:
+
+      &nbsp;
+    <input #noteName />
+  </label>
+  &nbsp;
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(noteName.value); noteName.value=''">
+    Toevoegen
+  </button>
+</div>
+
+<br>
+
+<ul class="notes">
+  <li *ngFor="let note of notes">
+    <a routerLink="/detail/{{note.id}}">
+      <span class="badge">{{note.id}}</span> {{note.name}}
+    </a>
+    <button class="delete" title="Verwijderen"
+      (click)="delete(note)">x</button>
+  </li>
+</ul>

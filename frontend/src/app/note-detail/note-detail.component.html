@@ -1,0 +1,13 @@
+<div *ngIf="note">
+  <h2>{{note.name}} wijzigen</h2>
+
+  <div>
+    <label>Inhoud:
+      <br><br>
+      <input [(ngModel)]="note.name" placeholder="inhoud"/>
+    </label>
+  </div>
+  <button (click)="goBack()">Terug</button>
+  &nbsp;&nbsp;
+  <button (click)="save()">Opslaan</button>
+</div>
